@@ -1,0 +1,152 @@
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 24px 25px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-header h5 {
+    font-size: 1.75rem;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid linear-gradient(135deg, #0f9586, #00d7ff);
+    border-radius: 10px;
+    color: rgb(99, 98, 98);
+}
+
+.form-control::placeholder {
+    color: #7c7b7b;
+}
+
+.btn-primary {
+    background-color: #00d7ff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0f9586;
+}
+
+.btn-close {
+    background-color: #fff;
+    opacity: 0.2;
+    border: none;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+.forgot-password, .signup-text a {
+    color: #00d7ff;
+    text-decoration: none;
+}
+
+.forgot-password:hover, .signup-text a:hover {
+    text-decoration: underline;
+    color: #0f9586;
+}
+
+.modal-content {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+}
+
+.modal-footer {
+    border-top: none;
+    padding-top: 0;
+}
+.robot-image {
+    position: relative;
+    margin-top: 50px;
+}
+  
+  .robot-image img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .features {
+    background-color: #282828;
+  }
+  
+  .features h3 {
+    color: #00d7ff;
+  }
+  
+  .features p {
+    color: #ccc;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #141414;
+    color: #ffffff;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Modal and Login Form Styling */
+  .modal-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .login-form h1, .modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: white;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+  }
+  
+  .form-control::placeholder {
+    color: #cccccc;
+  }
+  
+  #remember-me {
+    margin-right: 10px;
+  }
+  
+  .forgot-password {
+    color: #00d7ff;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.3);
+  }

@@ -1,0 +1,168 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #7f3ac8, #fc6262);
+    color: white;
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    background-color: #121212;
+    background-image: url('images/gears-background.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 4em;
+}
+
+.robot-image {
+    position: relative;
+    margin-top: 50px;
+}
+
+.robot-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Features Section */
+.features {
+    background-color: #282828;
+}
+
+.features h3 {
+    color: #00d7ff;
+}
+
+.features p {
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    background-color: #141414;
+    color: #ffffff;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Modal and Login Form Styling */
+.modal-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.login-form h1, .modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+}
+
+.form-control::placeholder {
+    color: #cccccc;
+}
+
+#remember-me {
+    margin-right: 10px;
+}
+
+.forgot-password {
+    color: #00d7ff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    background-color: #00d7ff;
+    border: none;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #00a3cc;
+}
+
+p {
+    color: #cccccc;
+}
+
+p a {
+    color: #00d7ff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Custom Buttons for Courses and Songs */
+#cursebutton {
+    background-image: linear-gradient(45deg, black 25%, white 25%, white 50%, black 50%, black 75%, white 75%, white 100%);
+    background-size: 40px 40px;
+    border: 2px solid black;
+    padding: 15px 0;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#cursebutton:hover {
+    transform: scale(1.05);
+}
+
+#songsbutton {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    line-height: 150px;
+    box-shadow: 12px 14px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#songsbutton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(255, 0, 0, 0.4);
+}

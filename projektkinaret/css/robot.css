@@ -1,0 +1,41 @@
+.custom-toggler {
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.robot-face {
+    width: 40px;
+    height: 40px;
+    background-color: #091f81;
+    border-radius: 30%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 100%;
+    position: absolute;
+    transition: transform 0.1s, height 0.2s ease-in-out;
+}
+
+.left-eye {
+    left: 20%;
+    top: 30%;
+}
+
+.right-eye {
+    right: 20%;
+    top: 30%;
+}
+
+.squint {
+    height: 2px;
+    transform: translateY(4px);
+}
+

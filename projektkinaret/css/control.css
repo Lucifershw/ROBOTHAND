@@ -1,0 +1,12 @@
+.save-btn-fixed {
+    position: fixed;
+    top: 290px;
+    left: 50px;
+}
+
+
+
+.hand-container {
+    width: 150px;
+    height: 150px;
+}

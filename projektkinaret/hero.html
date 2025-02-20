@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Processing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/robot.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/foter.css">
+    
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="robot-face navbar-toggler" id="robotFace">
+                    <div class="eye left-eye"></div>
+                    <div class="eye right-eye"></div>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./curses.html" id="coursesnav">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html">ABOUT</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#loginmodal" id="log-in">Login</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link btn btn-danger btn-lg" id="log-out" onclick="log_out()">logout</a></li>
+                    <li class="nav-item"><a class="nav-link controlbtn" href="./control.html">control</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./watch.html">watch</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1 class="display-4">welcome to my page</h1>
+            <p class="lead">Control the robot, watch, and interact with AI-driven processes.</p>
+        </div>
+        <div class="robot-image mt-4 d-flex justify-content-center align-items-center">
+            <img src="./img/DALL_E_2024-10-10_15.19.34_-_A_simplified_futuristic_holographic_hand_made_of_glowing_blue_and_cyan_colors__with_the_index_finger_curled_towards_the_palm._The_hand_is_composed_of_-removebg-preview.png" alt="Holographic Hand" class="img-fluid d-none d-md-block" style="width: 500px;">
+            <img src="./img/DALL_E_2024-10-10_12.10.12_-_A_clean_and_futuristic_landing_page_with_a_gradient_background__purple_to_pink__featuring_a_small_robot_with_a_compact_body_on_tank-like_tracks_with_m-removebg-preview.png" alt="Robot on Tracks" class="img-fluid" style="width: 1500px; margin-left: -120px;">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <h3>Control</h3>
+                    <p>Control the robot’s actions</p>
+                    <a href="./control.html" class="btn btn-primary btn-lg w-100 controlbtn">Control</a>                
+                </div>
+                <div class="col-md-3 text-center">
+                    <h3>Watch the Robot</h3>
+                    <p>Watch live robot actions</p>
+                    <a href="./watch.html" class="btn btn-primary btn-lg w-100 wachbtn" id="watchbtn">Watch</a>
+                </div>
+                <div class="col-md-3 text-center" id="coursesbtn">
+                    <h3>Courses</h3>
+                    <p>Learn with interactive courses</p>
+                    <a href="./curses.html" id="cursebutton" class="btn btn-primary btn-lg w-100"></a> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="login-form">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="emaill" placeholder="email" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="passwordl" placeholder="Password" required>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me" class="form-label">Remember Me</label>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" onclick="logdin()">Login</button>
+                        <p class="text-center mt-3 signup-text">Don't have an account? 
+                            <a href="#" id="openSignupModal">Sign Up</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupmodal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="signup-form">
+                        <div class="input-group mb-3">
+                            <input type="text" id="signup-username" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="email" id="signup-email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" id="signup-password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="signup-btn btn btn-primary w-100" onclick="craiteAcount()">Sign Up</button>
+                        <p class="text-center mt-3">Already have an account?
+                            <a href="#" id="openLoginModal">Log In</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+<footer class="footer bg-dark text-white pt-5 pb-4">
+    <div class="container text-center text-md-start">
+        <div class="row text-center text-md-start">
+            <!-- Quick Links -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-info">Quick Links</h5>
+                <p>
+                    <a href="#" class="text-white" style="text-decoration: none;">Home</a>
+                </p>
+                <p>
+                    <a href="./gallery.html" class="text-white" style="text-decoration: none;">Gallery</a>
+                </p>
+                <p>
+                    <a href="./curses.html" class="text-white" style="text-decoration: none;">Courses</a>
+                </p>
+            </div>
+            <!-- Social Media -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-info">Follow Us</h5>
+                <a href="https://www.facebook.com" class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" role="button" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" role="button" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.google.com" class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" role="button" target="_blank">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com" class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" role="button" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>           
+        </div>
+    </div>
+</footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-database-compat.js"></script>
+    <script src="./js/robot.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/fierbase.js"></script>
+
+</body>
+</html>

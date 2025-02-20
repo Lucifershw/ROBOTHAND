@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/control.css">
+    <link rel="stylesheet" href="./css/robot.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/foter.css">
+    <style>
+        body {
+    background: linear-gradient(135deg, #0f9586, #00d7ff);
+    }
+    #chat {
+        max-width: 600px; /* Restrict chat width for readability */
+        margin: 0 auto; /* Center the chat box horizontally */
+    }
+    #chat li {
+        margin-bottom: 8px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    #chat span {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">LOGO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="robot-face navbar-toggler" id="robotFace">
+                        <div class="eye left-eye"></div>
+                        <div class="eye right-eye"></div>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="./hero.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./curses.html" id="coursesnav">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./about.html">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link controlbtn" href="./control.html">control</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./watch.html">watch</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#loginmodal" id="log-in">Login</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link btn btn-danger btn-lg" id="log-out" onclick="log_out()">logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container text-center my-4 border p-3 bg-dark text-light">
+            <h3>Video Stream</h3>
+        </div>
+        <div class="container d-flex flex-column align-items-center my-4">
+            <button id="sensorcontrolbuten" onclick="sensorcontrol()">glove control ✋</button>
+            <div class="d-flex flex-column align-items-center">
+                <button class="btn btn-primary button-large mb-2" id="up_btn" onclick="moveUp()">&#8593; Up</button>
+                
+                <div class="d-flex">
+                    <button class="btn btn-primary button-large me-2" id="left_btn" onclick="moveLeft()">&#8592; Left</button>
+                    <button class="btn btn-danger button-large me-2" id="stop_btn" onclick="stopMovement()">&#9679; Stop</button>
+                    <button class="btn btn-primary button-large" id="right_btn" onclick="moveRight()">&#8594; Right</button>
+                </div>
+            
+                <button class="btn btn-primary button-large mt-2" id="down_btn" onclick="moveDown()">&#8595; Down</button>
+            </div>
+        </div>
+        <div class="d-md-none text-center">
+            <button id="save-small" class="btn btn-primary btn-lg mt-2">Save</button>
+        </div>
+        <div class="container hand-container d-flex justify-content-center align-items-center bg-dark text-center mt-4 text-light">
+            <h4>Hand animation tbd</h4>
+        </div>
+        <div class="container mt-4">
+            <ul id="chat" class="list-unstyled bg-white p-3" style="border-radius: 8px; max-width: 600px; margin: 0 auto;"></ul>
+          </div>
+    <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="login-form">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="username" placeholder="Username" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me" class="form-label">Remember Me</label>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <p class="text-center mt-3 signup-text">Don't have an account? 
+                            <a href="#" id="openSignupModal">Sign Up</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupmodal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="signup-form">
+                        <div class="input-group mb-3">
+                            <input type="text" id="signup-username" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="email" id="signup-email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" id="signup-password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="signup-btn btn btn-primary w-100">Sign Up</button>
+                        <p class="text-center mt-3">Already have an account?
+                            <a href="#" id="openLoginModal">Log In</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <!-- Quick Links -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Quick Links</h5>
+                    <p><a href="./hero.html" class="text-white" style="text-decoration: none;">Home</a></p>
+                    <p><a href="./gallery.html" class="text-white" style="text-decoration: none;">Gallery</a></p>
+                    <p><a href="./courses.html" class="text-white" style="text-decoration: none;">Courses</a></p>
+                    <p><a href="./music.html" class="text-white" style="text-decoration: none;">Songs</a></p>
+                </div>
+                <!-- Social Media -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Follow Us</h5>
+                    <a href="https://www.facebook.com" class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.google.com" class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" role="button" target="_blank"><i class="fab fa-google"></i></a>
+                    <a href="https://www.instagram.com" class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-database-compat.js"></script>
+    <script src="./js/fierbase.js"></script>
+    <script src="./js/robot.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/control.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #0f9586, #00d7ff);
+  color: white;
+  margin: 0;
+}
+
+.hero h1 {
+  font-size: 4em;
+}
+
+.btn-primary {
+  background-color: #00d7ff;
+  border: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #00a3cc;
+}
+
+p {
+  color: #cccccc;
+}
+
+p a {
+  color: #00d7ff;
+  text-decoration: none;
+}
+
+#cursebutton {
+  background-image: linear-gradient(45deg, black 25%, white 25%, white 50%, black 50%, black 75%, white 75%, white 100%);
+  background-size: 40px 40px;
+  border: 2px solid black;
+  padding: 15px 30px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  width: 150px;
+  height: 150px;
+}
+
+#cursebutton:hover {
+  transform: scale(1.05);
+}
+
+.hero{
+  background: linear-gradient(135deg, #0f9586, #00d7ff);
+}
